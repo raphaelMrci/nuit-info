@@ -4,13 +4,15 @@ import { ReactComponent as HomeNavImg } from "../../assets/homeNav.svg";
 import { ReactComponent as InfoNavImg } from "../../assets/infoNav.svg";
 import { ReactComponent as CalendarNavImg } from "../../assets/calendarNav.svg";
 import { useState } from "react";
+
 import { Link } from "react-router-dom";
+
 export const NavBar = (props) => {
     const [pos, setPos] = useState(0);
 
     return (
         <div className="navbar-box">
-            <Link to = {"/"} onClick={() => {setPos(0)}} style={{textDecoration : 'none'}}>
+            <Link to={{ pathname: "/" }} onClick={() => setPos(0)}>
                 <div className="navbar-item-box">
                     <HomeNavImg
                         className="navbar-item-img"
@@ -32,7 +34,12 @@ export const NavBar = (props) => {
                     </text>
                 </div>
             </Link>
-            <Link to = {"/Actions"} onClick={() => {setPos(1)}} style={{textDecoration : 'none'}}>
+            <Link
+                to={{ pathname: "/infos" }}
+                onClick={() => {
+                    setPos(1);
+                }}
+            >
                 <div className="navbar-item-box">
                     <InfoNavImg
                         className="navbar-item-img"
@@ -54,7 +61,7 @@ export const NavBar = (props) => {
                     </text>
                 </div>
             </Link>
-            <a onClick={() => setPos(2)}>
+            <Link onClick={() => setPos(2)}>
                 <div className="navbar-item-box">
                     <CalendarNavImg
                         className="navbar-item-img"
@@ -75,7 +82,7 @@ export const NavBar = (props) => {
                         Calendar
                     </text>
                 </div>
-            </a>
+            </Link>
         </div>
     );
 };

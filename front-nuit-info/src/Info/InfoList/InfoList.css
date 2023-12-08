@@ -1,0 +1,48 @@
+.InfoList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.title {
+    color: #000;
+    font-family: arial;
+    font-size: 37px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 116.602%; /* 43.143px */
+    text-transform: uppercase;
+    margin-top: 128px;
+    width: 80%;
+    text-align: start;
+    margin-bottom: 50px;
+}
+
+.info-list-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin-bottom: 100px;
+}
+
+.info-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+}
+
+.info-list-element {
+    display: inline;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}

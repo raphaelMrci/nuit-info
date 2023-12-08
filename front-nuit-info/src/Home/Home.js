@@ -2,11 +2,13 @@ import "./Home.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 
+import { CustomButton } from "../components/CustomButton/CustomButton";
+
 export const Home = () => {
     const touchesComponent = (element) => {
         console.log(element);
         return (
-            <div className="container">
+            <div>
                 <div className="line">
                     <div className="notes">
                         {element.game.map((ele) => {
@@ -78,6 +80,9 @@ export const Home = () => {
 
     return (
         <div className="App">
+            <Link to={{ pathname: "/Actions" }}>
+                <CustomButton text="Choisir mes actions" />
+            </Link>
             <div className="game">
                 <div
                     style={{

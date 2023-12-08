@@ -1,0 +1,19 @@
+.custom-button-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 287px;
+    height: 37px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.custom-button-text {
+    color: #fff;
+    text-align: center;
+    font-family: arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}

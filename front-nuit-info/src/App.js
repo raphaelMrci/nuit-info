@@ -2,6 +2,7 @@ import infoImg from "./assets/motionblur.png";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { InfoItem } from "./components/info/infoComponent.js";
+import { CustomButton } from "./components/CustomButton/CustomButton.js";
 
 function App() {
     const touchesComponent = (element) => {
@@ -80,11 +81,7 @@ function App() {
 
     return (
         <div className="App">
-            <InfoItem
-                title="Je suis une bonne personne"
-                img={infoImg}
-                alt="logo"
-            />
+            <CustomButton text="Start" />
         </div>
     );
 }

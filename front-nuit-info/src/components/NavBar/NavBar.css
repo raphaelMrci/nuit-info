@@ -22,3 +22,8 @@
     text-align: center;
     flex-direction: column;
 }
+
+Link,
+a {
+    text-decoration: none;
+}

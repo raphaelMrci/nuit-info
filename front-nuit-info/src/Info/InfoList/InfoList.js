@@ -1,5 +1,7 @@
 import "./InfoList.css";
 
+import { Link } from "react-router-dom";
+
 import { InfoItem } from "../../components/info/infoComponent";
 
 import data from "../../data/infos.json";
@@ -15,10 +17,17 @@ export const InfoList = () => {
                         .map((element) => {
                             return (
                                 <li className="info-list-element">
-                                    <InfoItem
-                                        title={element.title}
-                                        img={require(`../../${element.img}`)}
-                                    />
+                                    <Link
+                                        to={{
+                                            pathname: "/info",
+                                        }}
+                                        state={{ element }}
+                                    >
+                                        <InfoItem
+                                            title={element.title}
+                                            img={require(`../../${element.img}`)}
+                                        />
+                                    </Link>
                                 </li>
                             );
                         })}
@@ -29,10 +38,17 @@ export const InfoList = () => {
                         .map((element) => {
                             return (
                                 <li className="info-list-element">
-                                    <InfoItem
-                                        title={element.title}
-                                        img={require(`../../${element.img}`)}
-                                    />
+                                    <Link
+                                        to={{
+                                            pathname: "/info",
+                                        }}
+                                        state={{ element }}
+                                    >
+                                        <InfoItem
+                                            title={element.title}
+                                            img={require(`../../${element.img}`)}
+                                        />
+                                    </Link>
                                 </li>
                             );
                         })}

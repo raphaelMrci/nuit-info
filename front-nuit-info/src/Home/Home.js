@@ -6,7 +6,7 @@ export const Home = () => {
     const touchesComponent = (element) => {
         console.log(element);
         return (
-            <div className="container">
+            <div>
                 <div className="line">
                     <div className="notes">
                         {element.game.map((ele) => {

@@ -1,6 +1,10 @@
-.App {
+html,
+body,
+#app,
+#app > .App {
     text-align: center;
-    background: white;
+    background-color: #e8dfdf;
+    height: 100%;
 }
 
 .App-logo {

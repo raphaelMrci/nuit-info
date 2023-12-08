@@ -3,6 +3,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { InfoItem } from "./components/info/infoComponent.js";
 import { CustomButton } from "./components/CustomButton/CustomButton.js";
+import { NavBar } from "./components/NavBar/NavBar.js";
 
 function App() {
     const touchesComponent = (element) => {
@@ -81,7 +82,7 @@ function App() {
 
     return (
         <div className="App">
-            <CustomButton text="Start" />
+            <NavBar />
         </div>
     );
 }

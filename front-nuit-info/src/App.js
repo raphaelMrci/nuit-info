@@ -9,12 +9,12 @@ function App() {
   const touchesComponent = (element) => {
     console.log(element);
     return(
+      <div>
       <div className='line'>
         <div className='notes'>
         {element.game.map((ele) => {
           return(
-            <div style={{backgroundColor : 'black', width : 100, height : 50, position : 'absolute', top : ele.y, zIndex : 1}}>
-              <p>hey</p>
+            <div style={{backgroundColor : element.color, width : 50, height : 50, position : 'absolute', top : ele.y, zIndex : 1}}>
             </div>
 
           );
@@ -22,10 +22,11 @@ function App() {
         })}
 
         </div>
-        <div className = "touches">
-          <a onClick={() => {console.log("clock")}} style={{color : 'white', textAlign : 'center'}}>{element.id}</a>
-        </div>
       </div>
+      <div className = "touches">
+      <a onClick={() => {console.log("clock")}} style={{color : 'white', textAlign : 'center'}}>{element.id}</a>
+    </div>
+    </div>
     );
 
 
@@ -33,7 +34,7 @@ function App() {
   };
 
 
-  const touches = [{id : 0, game : []}, {id : 1, game : []}, {id : 2, game : []}, {id : 3, game : []}]
+  const touches = [{id : 0, game : [], color : "#FD8495"}, {id : 1, game : [], color : '#5FE4F7'}, {id : 2, game : [], color : "#2F4A9B"}]
   const [touche, settouche] = useState(touches);
   const [counter, setcounter] = useState(0);
   useEffect(() => {
@@ -70,7 +71,6 @@ function App() {
     <div className="App">
     <div className="game">
       <div style={{flexDirection : "row", display : 'flex', justifyContent : 'space-around'}}>
-        <p>{counter}</p>
       {touche.map(touchesComponent)}
       </div>
     </div>

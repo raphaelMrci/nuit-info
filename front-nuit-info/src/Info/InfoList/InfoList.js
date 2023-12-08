@@ -55,5 +55,6 @@ export const InfoList = () => {
                 </ul>
             </div>
         </div>
+
     );
 };

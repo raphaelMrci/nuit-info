@@ -1,5 +1,6 @@
 import "./Actions.css";
 import { useEffect, useState } from "react";
+import { Dirty } from '../dirty';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -10,7 +11,7 @@ export function Actions() {
       { id: 2, name: "Action3", finish: false }
     ];
     const [filledJson, setFilledJson] = useState([]);
-  
+
     useEffect(() => {
       const storedActions = localStorage.getItem("actions");
       if (!storedActions || JSON.parse(storedActions).length === 0) {
@@ -22,7 +23,7 @@ export function Actions() {
         setFilledJson(JSON.parse(storedActions));
       }
     }, [basicJson]);
-  
+
     const handleChange = (id, field, value) => {
         setFilledJson((prevList) => {
           const newList = prevList.map((item) =>
@@ -32,13 +33,13 @@ export function Actions() {
           return newList;
         });
       };
-  
+
     return (
       <div className="app">
         <div style={{ top: 40, marginLeft: 20, fontWeight: "bold", fontSize: 50 }}>
           MES ACTIONS
         </div>
-  
+
         <div className="tab">
           {filledJson.map((val) => {
             console.log(val.name, val.finish);
@@ -56,7 +57,7 @@ export function Actions() {
             );
           })}
         </div>
+        <Dirty />
       </div>
     );
   }
-  

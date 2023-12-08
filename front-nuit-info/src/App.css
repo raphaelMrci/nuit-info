@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: white;
 }
 
 .App-logo {
@@ -14,14 +15,44 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(90deg, red, blue);
+  max-height: 50;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+.touches {
+  background-color: black;
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  z-index: 100;
+}
+
+.line {
+  min-height: 300px;
+  max-height: 400px;
+  border : 1px solid black !important;
+}
+
+.touches:hover{
+  opacity: 0.7;
+}
+
+.notes{
+  max-height: 300px;
+  min-height: 200px;
+}
+
+.game {
+  max-height: 400px;
+  min-height: 300px;
 }
 
 .App-link {

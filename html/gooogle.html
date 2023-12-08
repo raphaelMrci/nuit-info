@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gooogle.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #logo {
+            width: 200px; /* Adjust the width as needed */
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(-5px, 5px); }
+            50% { transform: translate(5px, -5px); }
+            75% { transform: translate(5px, 5px); }
+            100% { transform: translate(-5px, -5px); }
+        }
+
+        #search-bar {
+            margin-top: 20px;
+            padding: 10px;
+            width: 400px; /* Adjust the width as needed */
+            border-radius: 20px; /* Adjust the border-radius for oval shape */
+            border: 1px solid #ccc; /* Add border for better visibility */
+        }
+
+        #button-container {
+            margin-top: auto; /* Move to the bottom of the page */
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+
+        .button {
+            padding: 10px;
+            color: black; /* Set the text color to black */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px; /* Adjust the margin as needed */
+            text-decoration: underline; /* Underline the text */
+            background-color: transparent; /* Set the background color to transparent */
+        }
+    </style>
+</head>
+<body>
+
+    <img id="logo" src="gooogle.png" alt="Gooogle Logo">
+    <br><br>
+
+    <form id="search-form">
+        <input type="text" id="search-bar" name="q" placeholder="Search..." onkeydown="checkEnter(event)">
+    </form>
+
+    <div id="multimedia-container">
+        <!-- Removed GIF and audio elements for simplicity -->
+    </div>
+
+    <div id="button-container">
+        <button class="button">À propos</button>
+        <button class="button">Publicité</button>
+        <button class="button">Entreprise</button>
+        <button class="button">Comment fonctionne la recherche Google ?</button>
+        <button class="button">Notre troisième décennie d'action pour le climat</button>
+        <button class="button">Signaler un contenu inapproprié</button>
+        <button class="button">Info consommateurs</button>
+        <button class="button">Confidentialité</button>
+        <button class="button">Conditions</button>
+        <button class="button">Paramètres</button>
+    </div>
+
+    <script>
+        function checkEnter(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent the default form submission
+                document.getElementById('logo').style.animation = 'shake 0.1s infinite'; // Start the shake animation
+                performSearch(); // Play the song and redirect
+            }
+        }
+
+        function stopShake() {
+            document.getElementById('logo').style.animation = 'none';
+        }
+
+        function performSearch() {
+            // Get the search query from the input
+            var searchQuery = document.getElementById('search-bar').value;
+
+            // Play song
+            var audio = new Audio('cow.mp3');
+            audio.play();
+
+            // Stop logo shake after the song finishes
+            audio.addEventListener('ended', function() {
+                stopShake();
+            });
+
+            // Redirect to Google with the search query
+            setTimeout(function () {
+                var encodedQuery = encodeURIComponent(searchQuery);
+                window.location.href = 'https://www.google.com/search?q=' + encodedQuery;
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>

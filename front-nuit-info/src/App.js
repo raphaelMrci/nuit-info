@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-
+import { Dirty } from './dirty';
 
 
 function App() {
@@ -74,6 +74,7 @@ function App() {
       {touche.map(touchesComponent)}
       </div>
     </div>
+    <Dirty></Dirty>
     </div>
   );
 }
